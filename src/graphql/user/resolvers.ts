@@ -4,12 +4,16 @@ import { CreateUserPayload } from "../../types/user.interface"
 const queries = {}
 const mutations = {
   createUser: async (_:any, payload:CreateUserPayload) => {
-    try{
       const user = await UserService.createUser(payload)
-      return user.id
-    }catch(err){
-      return (err as Error)?.message
-    }
+      // removing salt from the user
+      const {salt, ...userWithoutSalt} = user
+      // return user.id
+      return {
+          code: 201,
+          success: true,
+          message: "User Created Successfully",
+          user: userWithoutSalt
+      }
   }
 }
 
