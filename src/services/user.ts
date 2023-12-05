@@ -78,7 +78,6 @@ class UserService {
     // matching entered and stored password
     const isPasswordCorrect = bcrypt.compareSync(password, user.password)
     if(!isPasswordCorrect) {
-      console.log("inside")
       throwGraphqlError(StatusCodeErrors.NOT_FOUND, false, "cannot find an account with this email and password")
       return;
     }

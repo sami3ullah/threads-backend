@@ -27,6 +27,7 @@ type generateTokenResponse {
 }
 
 type UserWithoutPassword{
+  id: ID
   firstName: String
   lastName: String
   email: String
