@@ -14,4 +14,8 @@ type CreateUserPayload{
   password: String
 }
 
+extend type CreateUserPayload{
+  id: ID
+}
+
 `
