@@ -4,3 +4,8 @@ export interface CreateUserPayload {
   email: string
   password: string
 }
+
+export interface createJWTTokenPayload {
+  email: string
+  password: string
+}

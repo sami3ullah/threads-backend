@@ -18,4 +18,18 @@ extend type CreateUserPayload{
   id: ID
 }
 
+type generateTokenResponse {
+  code: Int
+  success: Boolean
+  message: String
+  token: String
+  user: UserWithoutPassword
+}
+
+type UserWithoutPassword{
+  firstName: String
+  lastName: String
+  email: String
+}
+
 `
