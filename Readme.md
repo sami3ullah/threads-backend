@@ -20,3 +20,11 @@
 3. run psql `psql`
 4. list all db's `\l`
 5. connect to a db `\c DB_NAME`
+
+# if you want to create a docker env without docker compose
+## creating a test env for mongodb
+### -dit -> detached 
+`docker run --name test-mongo -dit -p 27017:27017 --rm mongo:4.4.1`
+
+## connect to the container after that
+`docker exec -it test-mongo mongo`
